@@ -21,10 +21,31 @@ btn.addEventListener("click", (e) => {
 const inputZahlUser = document.querySelector("#inputZahlUser");
 
 // Runden Radio Buttons auswählen 
+// Szenario 0 
 const btnRadio = document.querySelectorAll("input[type=radio");
 console.log(btnRadio);
-//console.log(btnRadio[3].value); // Num oder text custom
-//console.log(btnRadio[3].checked); // true false
+console.log(btnRadio[3].value); // Num oder text custom
+console.log(btnRadio[3].checked); // true false
+
+/*
+ // Szenario 1
+const btnRadio2 = document.querySelector("#radio___display");    // geht holt value des gedrückten rein
+btnRadio2.addEventListener("change", (e) => {
+    console.log(e.target.value);
+});
+
+// Szenario 2
+const btnRadio3 = document.querySelector("input[type=radio]");    // geht holt value des gedrückten rein
+btnRadio2.addEventListener("change", (e) => {
+    console.log(e.target.value);
+});
+
+// Szenario 3
+const btnRadio4 = document.querySelectorAll("input[type=radio]");// geht holt value des gedrückten rein
+btnRadio2.addEventListener("change", (e) => {
+    console.log(e.target.value);
+});
+ */
 
 const unhidden = document.querySelector("#custom___hidden")
 unhidden.classList.add("js_display___none")
@@ -52,6 +73,10 @@ let ergebnisVersuch = 0
 
 // Runden Zahl heraus finden  --> function rundenZahlFinden
 // alle Radio Buttons rein
+console.log("--- " +  btnRadio)
+console.log(btnRadio)
+// console.log(btnRadio.e.value); // geht nicht
+// console.log(btnRadio.e.target.value); // geht nicht
 for (let i = 0; i < btnRadio.length; i++) {
 
     btnRadio[i].addEventListener("click", (e) => {
@@ -187,14 +212,14 @@ function berechnen(e) {
 
     console.log(userRunden); // hat er mit Radio Buttons ausgewählt
     console.log(userVersuche)
-   
-    if(userVersuche === userRunden) {    // das begrenzt das Spiel auf die ausgewählten Runden und zählt nicht weiter
-        
-    }else{
-    userVersuche++; // erhöht die Versuche um 1 bei jedem Durchlauf
-    console.log(userVersuche);
 
-    outputVersuche.innerHTML = userVersuche
+    if (userVersuche === userRunden) {    // das begrenzt das Spiel auf die ausgewählten Runden und zählt nicht weiter
+
+    } else {
+        userVersuche++; // erhöht die Versuche um 1 bei jedem Durchlauf
+        console.log(userVersuche);
+
+        outputVersuche.innerHTML = userVersuche
     }
 
 
@@ -227,17 +252,17 @@ function berechnen(e) {
 
 
     // Begrenzung der Versuche auf die ausgewählten Runden
-    console.log("ausgewählte Runden: "+ userRunden);
-    console.log("Versuche des Users: "+userVersuche);
+    console.log("ausgewählte Runden: " + userRunden);
+    console.log("Versuche des Users: " + userVersuche);
     console.log("Zahl Pc: " + inputZahlPc);
     console.log("Zahl user: " + inputZahlUserVal)
-    console.log("Vergleichs Ergebnis :" +ergebnisVersuch)
+    console.log("Vergleichs Ergebnis :" + ergebnisVersuch)
     if (userRunden === userVersuche && ergebnisVersuch === 1) {
         ergebnis = `du hast das ganze Spiel gewonnen! <br> <br> <br> neues Spiel?`
     }
     else if (userRunden === userVersuche && ergebnisVersuch === 0) {
         ergebnis = `du hast das ganze Spiel verloren!  <br> die Zahl war ${inputZahlPc} <br> <br> neues Spiel?!`
-        
+
 
     }
     outputErgebnisVersuch.innerHTML = (`--> ${ergebnis} <br>`)
