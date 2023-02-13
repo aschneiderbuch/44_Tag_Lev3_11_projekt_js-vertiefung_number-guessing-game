@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +11,60 @@
         sass --watch assets/scss/main.scss assets/css/style.css
      -->
 </head>
+
 <body>
-    
+
+    <section>
+
+        <form action="" onsubmit="return false">
+
+            <h1>Zahlenraten</h1>
+
+            <section>
+                <article>
+                    <p>in how many rounds you think you can guess the number?</p>
+                </article>
+                <article>
+                    <article>
+                        <input type="radio" name="radioNurEinerWählbar" id="radio4" value="4" checked>
+                        <label for="radio4">4</label>
+
+                        <input type="radio" name="radioNurEinerWählbar" id="radio5" value="5">
+                        <label for="radioNurEinerWählbar">5</label>
+
+                        <input type="radio" name="radioNurEinerWählbar" id="radio6" value="6">
+                        <label for="radioNurEinerWählbar">6</label>
+
+                        <input type="radio" name="radioNurEinerWählbar" id="radioCustom" value="Custom">
+                        <label for="radioNurEinerWählbar">custom</label>
+
+                        <input id="custom___hidden" type="number" name="custom" id="inputCustomRunden" hidden
+                            placeholder="custom">
+                        <label for="custom"></label>
+                    </article>
+
+                    <article id="runden___hidde" hidden>
+                        <h2>Runden 0/0 </h2>
+                    </article>
+
+                </article>
+
+                <!-- Zahlen Eingabe -->
+            </section>
+            <input type="number" name="input" id="inputZahlRaten" placeholder="Eingabe deiner Zahl">
+<input id="button" type="button" value="guess">
+
+            <section>
+
+            </section>
+
+
+        </form>
+
+    </section>
+
 
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
