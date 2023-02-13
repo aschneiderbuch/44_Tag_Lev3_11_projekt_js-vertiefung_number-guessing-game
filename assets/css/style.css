@@ -1,5 +1,9 @@
-.js_visibility___unhidden_vsible {
-  visibility: visible;
+.js_display___none {
+  display: none;
+}
+
+.js_display___block {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
